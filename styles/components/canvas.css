@@ -1,0 +1,10 @@
+canvas {
+    border-radius: 35px;
+    border: 3px solid black;
+    overflow: clip ; 
+}
+
+.canvas-container {
+    margin: auto 0; 
+}
+

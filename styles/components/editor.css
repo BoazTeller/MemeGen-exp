@@ -1,0 +1,332 @@
+.meme-editor-container {
+    margin-block-start: 1em;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.editor {
+    border-radius: 30px;
+    padding: 24px 40px;
+    
+    background-color: #383b42;
+}
+
+/* Text Input box */
+.editor .text-input-area {
+    margin-block-end: 1em;
+}
+
+.editor .text-input {
+    width: 100%;
+    max-width: 420px;
+    height: 56px;
+    border-radius: 28px;
+    
+    font-size: 25px;
+    color: #3d3d3d;
+    font-family: poppins-med ,sans-serif;
+    text-align: center;
+    
+    background-color: #ebeef3;
+    filter: drop-shadow(0.262px 4.993px 0px #bbc4d1);
+    box-shadow: inset 0px 5px 0px #ffffff;
+}
+
+.btn-clear-line {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+    font-size: 21px;
+    color: #ffffff;
+
+    background-color: #b0b0b0;
+    filter: drop-shadow(0.314px 5.992px 0px #888888);
+    box-shadow: inset 0px 5px 0px #ffffff;
+}
+
+
+/* Lines Controls - Switch/Add/Delete Line */
+/* All filter/box-shadow/background-image/text-shadows values taken from Photopea.com CSS */
+.line-controls {
+    gap: 1.2em;   
+    margin-block-end: 1em;
+}
+
+.line-controls button {
+    width: 57px;
+    height: 52px;
+    border-radius: 10px;
+    padding-top: 0.2em;
+    text-align: center;
+    border: none;
+    
+    font-size: 1.5em;
+    color: #fff;
+
+    transition:  transform 200ms ease-in, 
+                 background-image 200ms ease-in,
+                 scale 200ms ease-in;
+}
+
+.line-controls button:active {
+    scale: 0.9;
+}
+
+.line-controls .fa.trash {
+    background-image: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #ef5036 100%);
+
+    filter: drop-shadow(0.262px 4.993px 0px #8c0606);
+    box-shadow: inset 0px 5px 0px rgba(255,255,255,0.58);
+    text-shadow: 0.157px 2.996px 0.5px #8C0606;
+} 
+
+.line-controls .fa.trash:hover {
+    background-image: linear-gradient(-38deg, #b21830 0%, #b21830 1%, #d24632 100%);
+}
+
+.line-controls .fa.plus {
+    background-image: linear-gradient(-38deg, #42eb5c 0%, #37b349 100%, #37b349 100%);
+
+    filter: drop-shadow(0.262px 4.993px 0px #015d33);
+    box-shadow: inset 0px 5px 0px rgba(255,255,255,0.58);
+    text-shadow: 0.157px 2.996px 0.5px rgba(1, 93, 51, 0.61);
+}
+
+.line-controls .fa.plus:hover {
+    background-image: linear-gradient(-38deg, #39d651 0%, #32a841 100%, #32a841 100%);
+}
+
+.line-controls .fa.up {
+    background-image: linear-gradient(-38deg, #65c3db 0%, #3fb1cd 50%, #0b97bb 100%);
+
+    filter: drop-shadow(0.262px 4.993px 0px #048b97);
+    box-shadow: inset 0px 5px 0px rgba(255,255,255,0.58);
+    text-shadow: 0.157px 2.996px 0.5px rgba(0, 0, 0, 0.33);
+}
+
+.line-controls .fa.up:hover {
+    background-image: linear-gradient(-38deg, #5aacc4 0%, #369fb6 50%, #0a88a4 100%);
+}
+
+/* Text editor controls */
+.text-controls button,
+.text-controls select {
+    transition: box-shadow 0.3s ease;
+}
+
+.text-controls button:hover,
+.text-controls select:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.text-controls {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto;
+    
+    column-gap: 2vw;
+    row-gap: 19px;
+
+    margin-block-end: 0;
+
+    /* width: 445px;
+    height: 149px; */
+    border-radius: 15px;
+    background-color: #19a59f;
+    padding: 1em
+}
+
+.text-controls button {
+    width: 54px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    
+    font-size: 1.14em;
+    color: #22252c;
+}
+
+.text-controls .fa {
+    background-color: #ffffff;
+
+    filter: drop-shadow(0.262px 4.993px 0px rgba(92,92,92,0.55));
+    box-shadow: inset 0px 5px 0px rgba(255,255,255,0.58);
+}
+
+/* Position absolute to place the plus/minus spans */
+.text-controls .fa.font {
+    position: relative;
+    display: flex; 
+    align-items: center;
+    justify-content: center
+}
+
+.text-controls .fa.font span {
+    align-self: start;
+    font-weight: bold;
+}
+
+.text-controls .fa.font span.plus {
+    font-size: 1em;
+    margin-top: 0.6em;
+}
+
+.text-controls .fa.font span.minus {
+    font-size: 1.1em;
+    margin-top: 0.38em;
+}
+
+.text-controls .fa.font span {
+    font-size: 1em;
+    margin-top: 0.6em;
+}
+
+/* Color input are invisible and out of the document flow */
+.text-controls input[type=color] {
+    position: absolute;
+    opacity: 0;
+}
+
+.text-controls select {
+    grid-row: 2;
+    grid-column: span 3;
+
+    padding-inline-start: 30px;
+    border-radius: 10px;
+
+    font-size: 1.3em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #22252c;
+
+    filter: drop-shadow(0.262px 4.993px 0px rgba(92,92,92,0.55));
+    box-shadow: inset 0px 5px 0px rgba(255,255,255,0.58);
+    cursor: pointer;
+}
+
+.text-controls .btn-color-picker {
+    font-size: 1.6em;
+}
+
+.emoji-container {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 330px;
+    height: 65px;
+    border: 2px solid black;
+    border-radius: 45px;
+    overflow-x: auto;
+    padding-inline: 0.74em;
+    display: flex;
+    align-items: center;
+    background-color: #22252c;
+
+    margin-block-end: 20px;
+}
+
+.emoji-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 2em;
+}
+
+.emoji-container::-webkit-scrollbar {
+    height:8px;
+    border-radius: 6px;
+    margin: 30px;
+}
+
+.emoji-container::-webkit-scrollbar-track {
+    margin: 0 10px;
+}
+
+.emoji-container::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-image: linear-gradient(-86deg, #33bd6d 0%, #0b97b9 100%);
+    cursor: grab;
+}
+
+.emoji-container::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
+}
+
+.emoji-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 2em;
+
+    transition: scale 200ms ease-in-out;
+}
+
+.emoji-container button:hover {
+    scale: 1.15;
+}
+
+.editor .file-controls {
+    gap: 10px
+}
+
+.file-controls button {
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+
+    font-size: 30px;
+    font-family: poppins-semibold, sans-serif;
+    font-weight: 900;
+    color: white;
+
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.file-controls .save-btn {
+    filter: drop-shadow(0.262px 1.5px 0px #8c0606);
+    box-shadow: inset 0px 5px 0px rgba(255, 255, 255, 0.58);
+    background-image: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #ef5036 100%);
+}
+
+.file-controls .save-btn:hover {
+    background-image: linear-gradient(-38deg, #ef5036 0%, #ef5036 1%, #cf1d37 100%);
+}
+
+.file-controls .download-btn {
+    filter: drop-shadow(0.262px 1.5px 0px #d26900);
+    box-shadow: inset 0px 5px 0px rgba(255, 255, 255, 0.58);
+    background-image: linear-gradient(-38deg, #ff8c00 0%, #ff8c00 1%, #ffa500 100%);
+}
+
+.file-controls .download-btn:hover {
+    background-image: linear-gradient(-38deg, #ffa500 0%, #ffa500 1%, #ff8c00 100%);
+}
+
+.file-controls .share-fb-btn {
+    filter: drop-shadow(0.262px 1.5px 0px #048b97);
+    box-shadow: inset 0px 5px 0px rgba(255, 255, 255, 0.58);
+    background-image: linear-gradient(-38deg, #65c3db 0%, #3fb1cd 50%, #0b97bb 100%);
+}
+
+.file-controls .share-fb-btn:hover {
+    background-image: linear-gradient(-38deg, #3fb1cd 0%, #3fb1cd 50%, #65c3db 100%);
+}
+
+.file-controls .share-btn {
+    filter: drop-shadow(0.262px 1.5px 0px #046b05);
+    box-shadow: inset 0px 5px 0px rgba(255, 255, 255, 0.58);
+    background-image: linear-gradient(-38deg, #0dbc37 0%, #0dbc37 1%, #35e062 100%);
+}
+
+.file-controls .share-btn:hover {
+    background-image: linear-gradient(-38deg, #35e062 0%, #35e062 1%, #0dbc37 100%);
+}

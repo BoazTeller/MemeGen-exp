@@ -1,0 +1,160 @@
+/* Main font: Poppins */
+@font-face {
+	font-family: poppins-light;
+    src: url(../../fonts/poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+	font-family: poppins;
+    src: url(../../fonts/poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+	font-family: poppins-med;
+	src: url(../../fonts/poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+	font-family: poppins-semibold;
+	src: url(../../fonts/poppins/Poppins-SemiBold.ttf);
+}
+
+/* Various meme editor fonts through Google Fonts CDN */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Impact&family=Arial+Black&family=Comic+Sans+MS&family=Courier+New&family=Helvetica&family=Roboto&family=Times+New+Roman&family=Verdana&family=Futura&display=swap');
+
+.impact { font-family: 'Impact', sans-serif; }
+.arial-black { font-family: 'Arial Black', sans-serif; }
+.comic-sans-ms { font-family: 'Comic Sans MS', cursive; }
+.courier-new { font-family: 'Courier New', monospace; }
+.helvetica { font-family: 'Helvetica', sans-serif; }
+.roboto { font-family: 'Roboto', sans-serif; }
+.times-new-roman { font-family: 'Times New Roman', serif; }
+.verdana { font-family: 'Verdana', sans-serif; }
+.futura { font-family: 'Futura', sans-serif; }
+.georgia { font-family: 'Georgia', serif; }
+
+/* Font Awesome */
+@font-face {
+    font-family: fa;
+    src: 
+    url("../../fonts/fa/fa-solid-900.ttf");
+}
+
+@font-face {
+    font-family: fa-brands;
+    src: url("../../fonts/fa/fa-brands-400.ttf");
+}
+
+.fa-brands::before {
+    font-family: fa-brands;
+}
+
+.fa::before {
+    font-family: fa;
+}
+
+.fa::after {
+    font-family: fa;
+}
+
+.fa.font::before {
+    content: "\f031";
+}
+
+.fa.plus::before {
+    content: "\2b";
+}
+
+.fa.plus2::after {
+    content: "\2b";
+}
+
+.fa.trash::before {
+    content: "\f1f8";
+}
+
+.fa.up::before {
+    content: "\f30c";
+}
+
+.fa.down::after {
+    content: "\f309";
+}
+
+.fa.up-down::before {
+    content: "\f338";
+}
+
+.fa.align-left::before {
+    content: "\f036";
+}
+
+.fa.align-center::before {
+    content: "\f037";
+}
+
+.fa.align-right::before {
+    content: "\f038";
+}
+
+.fa.brush::before {
+    content: "\f55d";
+}
+
+.fa.fill-drip::before {
+    content: "\f576";
+}
+
+.fa.magnifying-glass::before {
+    content: "\f002";
+}
+
+.fa.magnifying-glass::before {
+    content: "\f002";
+}
+
+.fa.delete-left::before {
+    content: "\f55a";
+}
+
+.fa.file-import::before {
+    content: "\f56f";
+}
+
+.fa.x::before {
+    content: "\f00d"; 
+}
+
+.fa.floppy-disk::before {
+    content: "\f0c7"; 
+}
+
+.fa.download::before {
+    content: "\f019"; 
+}
+
+.fa-brands.square-facebook::before {
+    content: "\f082"; 
+}
+
+.fa.share-nodes::before {
+    content: "\f1e0"; 
+}
+
+.fa.circle-down::before {
+    content: "\f358"; 
+}
+
+.fa.trash-can::before {
+    content: "\f2ed"; 
+}
+
+.fa.pen::before {
+    content: "\f304"; 
+}
+
+.fa.pencil::before {
+    content: "\f303"; 
+}
+
+

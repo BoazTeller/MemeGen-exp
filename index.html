@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>MemeMania</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon-32x32.png">
+    <script src="https://kit.fontawesome.com/cea3baaf08.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="onInit()" class="main-layout menu-open">
+    <div class="main-screen hidden" onclick="onToggleMenu()"></div>
+
+    <header class="main-header-container">
+        <div class="spacer"></div>
+
+        <header class="main-header">
+            <div class="logo" data-trans="appTitle">MemeMania<span>©</span></div>
+            <nav class="main-nav-container">
+                <ul class="main-nav clean-list">
+                    <li>
+                        <a class="active" onclick="onUpdateActiveNav(this), onShowGallery()" data-trans="galleryLink" href="#">Gallery</a>
+                    </li>
+                    <li>
+                        <a onclick="onUpdateActiveNav(this), onDisplaySaved()" data-trans="savedLink" href="#">Saved</a>
+                    </li>
+                    <li>
+                        <a onclick="onUpdateActiveNav(this), onDisplayRandomMeme()" data-trans="randomizeLink" href="#">Randomize</a>
+                    </li>
+                </ul>
+            </nav>
+            <select class="lang-select" onchange="onSetLang(this.value)">
+                <option value="en">English</option>
+                <option value="he">עברית</option>
+            </select>
+            <button class="toggle-menu-btn hidden" onclick="onToggleMenu()" type="button">☰</button>
+        </header>
+
+        <div class="spacer"></div>
+    </header>
+
+    <main class="main-content">
+
+        <section class="meme-gallery-page main-layout gallery">
+            <section class="meme-search flex">
+                <div class="meme-search-icon-container flex">
+                    <input type="text" class="meme-search-input" list="meme-keywords" name="meme-search-input" placeholder="Search" data-trans="searchInput" oninput="onSetFilter(this.value)">    
+                    <datalist id="meme-keywords"></datalist>
+                    <button class="btn-clear-search search-btn fa delete-left" onclick="onClearSearch()"></button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <ul class="keywords-search-list flex align-center space-evenly clean-list"></ul>
+                <button class="btn-img-import fa.file-import search-btn" data-trans="uploadBtn" onclick="triggerFileInput()">Upload</button>
+                <input type="file" id="file-input" class="file-input hidden" name="file-input" onchange="onImgInput(event)" accept="image/*"/>
+            </section> 
+
+            <section class="meme-gallery"></section>
+        </section>
+
+        <div class="meme-editor-container hidden flex">
+            <div class="canvas-container">
+                <canvas width="500" height="500" onclick="onCanvasSelectLine(event)"></canvas>
+            </div>
+        
+            <div class="editor flex column align-center">
+                <div class="text-input-area flex align-center">
+                    <input type="text" id="text-input" class="text-input" autocomplete="off" placeholder="Enter text" data-trans="textInput" oninput="onTextInput(this.value)"> 
+                    <button class="btn-clear-line fa x" onclick="onClearInput()"></button>
+                </div>
+
+                <div class="line-controls flex">
+                    <button onclick="onSwitchLine()" class="btn-switch-line fa up down"></button>
+                    <button onclick="onAddLine()" class="btn-add-line fa plus"></button>    
+                    <button onclick="onDeleteLine()" class="btn-delete-line fa trash"></button>
+                </div>
+
+                <div class="text-controls">
+                    <button onclick="onUpdateFontSize('increase')" class="fa font"><span class="plus">+</span></button>
+                    <button onclick="onUpdateFontSize('decrease')" class="fa font"><span class="minus">-</span></button>
+                    <button onclick="onSetTextAlignment('left')" class="fa align-left"></button>
+                    <button onclick="onSetTextAlignment('center')" class="fa align-center"></button>
+                    <button onclick="onSetTextAlignment('right')" class="fa align-right"></button>
+                    
+                    <select id="font-select" class="" oninput="onSetFontFamily(this.value)">
+                        <option value="poppins">Poppins</option>
+                        <option value="impact" selected>Impact</option>
+                        <option value="helvetica">Helvetica</option>
+                        <option value="roboto">Roboto</option>
+                        <option value="georgia">Georgia</option>
+                        <option value="tahoma">Tahoma</option>
+                        <option value="monospace">Monospace</option>
+                        <option value="arial">Arial</option>
+                        <option value="verdana">Verdana</option>
+                    </select>
+                    <button class="btn-color-picker fa brush stroke-btn">
+                        <input type="color" id="stroke-color" class="" oninput="onSetStrokeStyle(this.value)">
+                    </button>
+                    <button class="btn-color-picker fa fill-drip fill-btn">
+                        <input type="color" id="fill-color" class="" oninput="onSetFillStyle(this.value)">
+                    </button>
+                </div>
+
+                <div class="emoji-container flex">
+                    <button onclick="onAddLine(this.textContent)">😂</button>
+                    <button onclick="onAddLine(this.textContent)">❤️</button>
+                    <button onclick="onAddLine(this.textContent)">🔥</button>
+                    <button onclick="onAddLine(this.textContent)">😭</button>
+                    <button onclick="onAddLine(this.textContent)">😎</button>
+                    <button onclick="onAddLine(this.textContent)">🤩</button>
+                    <button onclick="onAddLine(this.textContent)">👍</button>
+                    <button onclick="onAddLine(this.textContent)">👑</button>
+                    <button onclick="onAddLine(this.textContent)">😜</button>
+                    <button onclick="onAddLine(this.textContent)">🎉</button>
+                    <button onclick="onAddLine(this.textContent)">🦄</button>
+                    <button onclick="onAddLine(this.textContent)">😊</button>
+                    <button onclick="onAddLine(this.textContent)">✨</button>
+                    <button onclick="onAddLine(this.textContent)">🚀</button>
+                    <button onclick="onAddLine(this.textContent)">🙌</button>
+                    <button onclick="onAddLine(this.textContent)">💥</button>
+                    <button onclick="onAddLine(this.textContent)">🍕</button>
+                    <button onclick="onAddLine(this.textContent)">🎈</button>
+                    <button onclick="onAddLine(this.textContent)">👀</button>
+                    <button onclick="onAddLine(this.textContent)">💯</button>                
+                </div>
+
+                <div class="file-controls flex">
+                    <button class="save-btn fa floppy-disk" title="Save" onclick="onSaveMeme()"></button>
+                    <button class="download-btn fa download" title="Download" onclick="triggerOnDownloadMeme()"></button>
+                    <a href="#" id="downloads-link"  class="hidden" onclick="onDownloadMeme(this)" download="my-meme.jpg"></a>  
+                    <button class="share-fb-btn fa-brands square-facebook" title="Share on Facebook"  onclick="onShareOnFacebook()"></button>
+                    <button class="share-btn fa share-nodes" title="Share on the web"></button>
+                </div>
+            </div>
+        </div> 
+        
+        <section class="saved-memes-section hidden main-layout hidden">
+            <div class="saved-memes-info">
+                <!-- <h1 class="saved-title">Saved Memes</h1> -->
+                <h1 class="no-saved-msg" data-trans="savedSubTitle">No saved memes found.</h1>
+            </div>
+            <div class="saved-memes"></div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer full">
+        <div class="logo" data-trans="appTitle">MemeMania<span>©</span></div>
+        <div class="footer-content">
+            <img src="images/pepe.svg" alt="">
+            <p data-trans="footerTxt">All your meme are belong to us.</p>
+        </div>
+    </footer>
+
+    <script src="js/services/util-service.js"></script>
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/translate-service.js"></script>
+    <script src="js/services/meme-service.js"></script>
+    <script src="js/controllers/meme-controller.js"></script>
+    <script src="js/controllers/saved-memes-controller.js"></script>
+    <script src="js/controllers/gallery-controller.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+:root {
+    /* palette */ 
+  
+    /* social media logo colors */
+    --color-facebook: #1877F2;
+    --color-twitter: #1DA1F2;
+    --color-behance: #1769FF;
+    --color-dribbble: #EA4C89;
+  
+    /* timing */
+    --duration-short: 0.3s; 
+    --duration-medium: 0.5s; 
+    --duration-long: 1s; 
+    --delay-short: 0.1s; 
+    --delay-medium: 0.3s; 
+    --delay-long: 0.5s;  
+  }

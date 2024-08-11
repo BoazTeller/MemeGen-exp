@@ -1,0 +1,36 @@
+.main-footer {    
+    display: flex; 
+    flex-direction: column;
+    flex-shrink: 0; 
+    justify-content: center;
+    align-items: center;
+    height: 6.25em;
+
+    background-color: #383b42;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.main-footer .footer-content { 
+    display: flex;
+    align-items: center;
+}
+
+.main-footer img {
+    height: 2.5em;
+    width: 2.5em;
+    margin-inline-end: 0.625em; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

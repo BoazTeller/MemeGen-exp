@@ -1,0 +1,45 @@
+.flex {
+    display: flex;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.space-evenly {
+    justify-content: space-evenly;
+}
+
+.flex.space-around {
+    justify-content: space-around;
+}
+
+flex.justify-center {
+    justify-content: center;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.grid {
+    display: grid;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
